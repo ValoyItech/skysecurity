@@ -100,6 +100,7 @@
       <a href="#about"   class="nav-link text-white hover:text-red-400"><i class="fas fa-user-shield mr-1"></i>About</a>
       <a href="#courses"  class="nav-link text-white hover:text-red-400"><i class="fas fa-book mr-1"></i>Courses</a>
       <a href="#gallery"  class="nav-link text-white hover:text-red-400"><i class="fas fa-images mr-1"></i>Gallery</a>
+      <a href="#recruitment" class="nav-link text-white hover:text-red-400"><i class="fas fa-briefcase mr-1"></i>Careers</a>
       <a href="#contact"  class="nav-link text-white hover:text-red-400"><i class="fas fa-envelope mr-1"></i>Contact</a>
     </div>
 
@@ -120,78 +121,88 @@
     <a href="#about"   class="block text-white hover:text-red-400 text-lg"><i class="fas fa-user-shield mr-2"></i>About</a>
     <a href="#courses"  class="block text-white hover:text-red-400 text-lg"><i class="fas fa-book mr-2"></i>Courses</a>
     <a href="#gallery"  class="block text-white hover:text-red-400 text-lg"><i class="fas fa-images mr-2"></i>Gallery</a>
+    <a href="#recruitment" class="block text-white hover:text-red-400 text-lg"><i class="fas fa-briefcase mr-2"></i>Careers</a>
     <a href="#contact"  class="block text-white hover:text-red-400 text-lg"><i class="fas fa-envelope mr-2"></i>Contact</a>
   </div>
 </div>
 <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
 
 <!-- Hero Section -->
-<section id="home" class="hero-bg h-screen flex items-center justify-center relative">
-  <div class="hero-slide active" style="background-image:url('images/hero1.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/hero2.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/hero3.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/hero4.jpg')"></div>
+<section id="home" class="hero-bg h-screen relative overflow-hidden">
+  <!-- Background Slides -->
+  <div class="hero-slide active" style="background-image: url('images/hero1.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/hero2.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/hero3.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('images/hero4.jpg');"></div>
 
-  <div class="hero-content absolute inset-0 flex items-center justify-center text-center px-4 pt-20">
-    <div class="max-w-6xl">
-      <!-- Slide 1 -->
-      <div class="slide-text active" id="slide-text-0">
-        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
-          SKY SECURITY & TRAINING <span class="block text-red-400 text-2xl md:text-4xl mt-2">ACADEMY</span>
-        </h1>
-        <p class="text-xl md:text-2xl mt-4 text-gray-200">Empowering Security Professionals – One Course at a Time</p>
-        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
-          Accredited PSIRA and firearm training programs from Grade E to A, tactical security, and instructor development.
-        </p>
-        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
-          ENROLL NOW
-        </a>
-      </div>
+  <!-- Centered text container -->
+<div class="absolute inset-0 z-10 flex items-center justify-center text-center px-4">
+  <div class="max-w-4xl w-full relative">
 
-      <!-- Slide 2 -->
-      <div class="slide-text" id="slide-text-1">
-        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
-          FIREARMS TRAINING <span class="block text-red-400 text-2xl md:text-4xl mt-2">EXCELLENCE</span>
-        </h1>
-        <p class="text-xl md:text-2xl mt-4 text-gray-200">Master the Art of Responsible Firearm Handling</p>
-        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
-          Train with handguns, rifles, and shotguns under experienced instructors.
-        </p>
-        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
-          START TRAINING
-        </a>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="slide-text" id="slide-text-2">
-        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
-          TACTICAL OPERATIONS <span class="block text-red-400 text-2xl md:text-4xl mt-2">SPECIALIST COURSES</span>
-        </h1>
-        <p class="text-xl md:text-2xl mt-4 text-gray-200">Advanced Security Operations Training</p>
-        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
-          Cash-in-transit, armed response, control room operations.
-        </p>
-        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
-          ADVANCE YOUR CAREER
-        </a>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="slide-text" id="slide-text-3">
-        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
-          INSTRUCTOR DEVELOPMENT <span class="block text-red-400 text-2xl md:text-4xl mt-2">PROGRAM</span>
-        </h1>
-        <p class="text-xl md:text-2xl mt-4 text-gray-200">Train the Next Generation of Security Professionals</p>
-        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
-          Become a certified instructor across South Africa.
-        </p>
-        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
-          BECOME AN INSTRUCTOR
-        </a>
-      </div>
+    <!-- Slide 1  – all slides are absolutely positioned in the same spot -->
+    <div class="slide-text active absolute inset-0 flex flex-col justify-center items-center">
+      <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+        SKY SECURITY & TRAINING
+        <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl mt-1">ACADEMY</span>
+      </h1>
+      <p class="text-lg sm:text-xl mt-3 md:mt-4 text-gray-200">Empowering Security Professionals – One Course at a Time</p>
+      <p class="text-base sm:text-lg mt-2 max-w-3xl mx-auto text-gray-300">
+        Accredited PSIRA and firearm training programs from Grade E to A, tactical security, and instructor development.
+      </p>
+      <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold military-font mt-4 md:mt-6">
+        ENROLL NOW
+      </a>
     </div>
-  </div>
 
+    <!-- Slide 2 -->
+    <div class="slide-text absolute inset-0 flex flex-col justify-center items-center">
+      <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+        FIREARMS TRAINING
+        <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl mt-1">EXCELLENCE</span>
+      </h1>
+      <p class="text-lg sm:text-xl mt-3 md:mt-4 text-gray-200">Master the Art of Responsible Firearm Handling</p>
+      <p class="text-base sm:text-lg mt-2 max-w-3xl mx-auto text-gray-300">
+        Train with handguns, rifles, and shotguns under experienced instructors.
+      </p>
+      <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold military-font mt-4 md:mt-6">
+        START TRAINING
+      </a>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide-text absolute inset-0 flex flex-col justify-center items-center">
+      <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+        TACTICAL OPERATIONS
+        <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl mt-1">SPECIALIST COURSES</span>
+      </h1>
+      <p class="text-lg sm:text-xl mt-3 md:mt-4 text-gray-200">Advanced Security Operations Training</p>
+      <p class="text-base sm:text-lg mt-2 max-w-3xl mx-auto text-gray-300">
+        Cash-in-transit, armed response, control room operations.
+      </p>
+      <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold military-font mt-4 md:mt-6">
+        ADVANCE YOUR CAREER
+      </a>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide-text absolute inset-0 flex flex-col justify-center items-center">
+      <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+        INSTRUCTOR DEVELOPMENT
+        <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl mt-1">PROGRAM</span>
+      </h1>
+      <p class="text-lg sm:text-xl mt-3 md:mt-4 text-gray-200">Train the Next Generation of Security Professionals</p>
+      <p class="text-base sm:text-lg mt-2 max-w-3xl mx-auto text-gray-300">
+        Become a certified instructor across South Africa.
+      </p>
+      <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold military-font mt-4 md:mt-6">
+        BECOME AN INSTRUCTOR
+      </a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Slide indicators -->
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
     <button class="slide-indicator active w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
     <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
