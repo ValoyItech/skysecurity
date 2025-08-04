@@ -3,562 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Security & Training Academy - Professional Security Training</title>
+    <title>Sky Security & Training Academy | PSIRA & Firearms Training Malamulele</title>
+    <meta name="description" content="Accredited security and firearms training in Malamulele. PSIRA grades E-A, tactical training, instructor courses & more. Empower your security career with Sky Security.">
+    <meta name="keywords" content="Sky Security, PSIRA Training, Firearms Training, Tactical Security, Instructor Course, Malamulele Security, Security Academy South Africa">
+    <meta name="author" content="Sky Security & Training Academy">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.co.za/">
+    <meta property="og:title" content="Sky Security & Training Academy | PSIRA & Firearms Training Malamulele">
+    <meta property="og:description" content="Accredited security and firearms training including tactical and instructor development. Opposite Malamulele Hospital.">
+    <meta property="og:image" content="https://yoursite.co.za/images/og-banner.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yoursite.co.za/">
+    <meta property="twitter:title" content="Sky Security & Training Academy | PSIRA & Firearms Training Malamulele">
+    <meta property="twitter:description" content="Accredited PSIRA & Firearm courses. Grades E-A, Tactical Ops, Cash-in-Transit, and more.">
+    <meta property="twitter:image" content="https://yoursite.co.za/images/og-banner.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <!-- Tailwind + Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
-        
-        .hero-bg {
-            position: relative;
-            overflow: hidden;
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            font-family: 'Rajdhani', sans-serif;
         }
-        
+        .military-font { font-family: 'Orbitron', monospace; }
+
+        /* Hero slider styles */
+        .hero-bg { position: relative; overflow: hidden; }
         .hero-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/* Desktop: adjust zoom using background-position and height ratio */
-@media (min-width: 1024px) {
-    .hero-slide {
-        background-size: cover; /* Fill screen edge to edge */
-        background-position: center top; /* Shows more of top part */
-    }
-}
-
-        
-        .hero-slide.active {
-            opacity: 1;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 1.5s ease-in-out;
+            background-size: cover; background-position: center center;
+            background-repeat: no-repeat;
         }
-        
+        .hero-slide.active { opacity: 1; }
         .hero-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            content: ''; position: absolute; inset: 0;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
             z-index: 1;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
+        .hero-content { position: relative; z-index: 2; }
+
         .slide-text {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 0; transform: translateY(30px);
             transition: all 1s ease-in-out;
         }
-        
-        .slide-text.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .military-font { font-family: 'Orbitron', monospace; }
-        .content-font { font-family: 'Rajdhani', sans-serif; }
-        
-        .special-badge {
-            background: linear-gradient(45deg, #dc2626, #b91c1c);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .course-card {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            border-color: #dc2626;
-            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: #dc2626;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #dc2626;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .gallery-item {
-            transition: transform 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .contact-form input, .contact-form textarea, .contact-form select {
-            transition: border-color 0.3s ease;
-        }
-        
-        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
-            border-color: #dc2626;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-        }
-        
-        /* Animation Classes */
-        .fade-in-up {
+        .slide-text.active { opacity: 1; transform: translateY(0); }
+
+        /* Utility animations */
+        .fade-in-up, .fade-in-left, .fade-in-right, .scale-in {
             opacity: 0;
-            transform: translateY(50px);
             transition: all 0.8s ease-out;
         }
-        
-        .fade-in-up.animate {
+        .fade-in-up { transform: translateY(50px); }
+        .fade-in-left { transform: translateX(-50px); }
+        .fade-in-right { transform: translateX(50px); }
+        .scale-in { transform: scale(0.8); }
+        .animate {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0) scale(1);
         }
-        
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease-out;
-        }
-        
-        .fade-in-left.animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease-out;
-        }
-        
-        .fade-in-right.animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s ease-out;
-        }
-        
-        .scale-in.animate {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        .stagger-animation {
-            transition-delay: 0.1s;
-        }
-        
-        .stagger-animation:nth-child(2) { transition-delay: 0.2s; }
-        .stagger-animation:nth-child(3) { transition-delay: 0.3s; }
-        .stagger-animation:nth-child(4) { transition-delay: 0.4s; }
-        .stagger-animation:nth-child(5) { transition-delay: 0.5s; }
     </style>
 </head>
-<body class="bg-black text-white content-font">
+
+<body class="bg-black text-white">
+
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-red-600">
-  <div class="flex justify-between items-center px-4 py-3 max-w-7xl mx-auto">
+  <div class="flex items-center justify-between px-4 py-3 max-w-7xl mx-auto">
     <!-- Logo -->
-    <div class="flex items-center space-x-3">
-  <!-- Logo Image -->
-  <img src="images/logo.png" alt="Sky Security Logo" class="w-12 h-12 object-contain">
-
-  <!-- Logo Text -->
-  <div>
-    <h1 class="military-font font-bold text-xl text-white">SKY SECURITY</h1>
-    <p class="text-red-400 text-sm">Training Academy</p>
-  </div>
-</div>
-
+    <div class="flex items-center space-x-3 min-w-0 shrink-0">
+      <img src="images/logo.png" alt="Sky Security Logo" class="w-12 h-12 object-contain">
+      <div>
+        <h1 class="military-font font-bold text-xl text-white">SKY SECURITY</h1>
+        <p class="text-red-400 text-sm">Training Academy</p>
+      </div>
+    </div>
 
     <!-- Desktop Menu -->
     <div class="hidden md:flex space-x-8">
-      <a href="#home" class="nav-link text-white hover:text-red-400"><i class="fas fa-home mr-1"></i>Home</a>
-      <a href="#about" class="nav-link text-white hover:text-red-400"><i class="fas fa-user-shield mr-1"></i>About</a>
-      <a href="#courses" class="nav-link text-white hover:text-red-400"><i class="fas fa-book mr-1"></i>Courses</a>
-      <a href="#gallery" class="nav-link text-white hover:text-red-400"><i class="fas fa-images mr-1"></i>Gallery</a>
-      <a href="#contact" class="nav-link text-white hover:text-red-400"><i class="fas fa-envelope mr-1"></i>Contact</a>
+      <a href="#home"    class="nav-link text-white hover:text-red-400"><i class="fas fa-home mr-1"></i>Home</a>
+      <a href="#about"   class="nav-link text-white hover:text-red-400"><i class="fas fa-user-shield mr-1"></i>About</a>
+      <a href="#courses"  class="nav-link text-white hover:text-red-400"><i class="fas fa-book mr-1"></i>Courses</a>
+      <a href="#gallery"  class="nav-link text-white hover:text-red-400"><i class="fas fa-images mr-1"></i>Gallery</a>
+      <a href="#contact"  class="nav-link text-white hover:text-red-400"><i class="fas fa-envelope mr-1"></i>Contact</a>
     </div>
 
-    <!-- Hamburger for Mobile -->
+    <!-- Hamburger Button (mobile) -->
     <button id="menuToggle" class="md:hidden text-white text-2xl">
       <i class="fas fa-bars"></i>
     </button>
   </div>
 </nav>
 
-
-<!-- Mobile Sidebar Menu -->
+<!-- Mobile Sidebar -->
 <div id="mobileSidebar" class="fixed top-0 left-0 w-64 h-full bg-black border-r border-red-600 transform -translate-x-full transition-transform duration-300 z-50">
-  <div class="p-6 space-y-6">
+  <div class="p-6 space-y-6 relative">
     <button id="closeSidebar" class="text-white text-xl absolute top-4 right-4">
       <i class="fas fa-times"></i>
     </button>
-    <a href="#home" class="block text-white hover:text-red-400 text-lg"><i class="fas fa-home mr-2"></i>Home</a>
-    <a href="#about" class="block text-white hover:text-red-400 text-lg"><i class="fas fa-user-shield mr-2"></i>About</a>
-    <a href="#courses" class="block text-white hover:text-red-400 text-lg"><i class="fas fa-book mr-2"></i>Courses</a>
-    <a href="#gallery" class="block text-white hover:text-red-400 text-lg"><i class="fas fa-images mr-2"></i>Gallery</a>
-    <a href="#contact" class="block text-white hover:text-red-400 text-lg"><i class="fas fa-envelope mr-2"></i>Contact</a>
+    <a href="#home"    class="block text-white hover:text-red-400 text-lg"><i class="fas fa-home mr-2"></i>Home</a>
+    <a href="#about"   class="block text-white hover:text-red-400 text-lg"><i class="fas fa-user-shield mr-2"></i>About</a>
+    <a href="#courses"  class="block text-white hover:text-red-400 text-lg"><i class="fas fa-book mr-2"></i>Courses</a>
+    <a href="#gallery"  class="block text-white hover:text-red-400 text-lg"><i class="fas fa-images mr-2"></i>Gallery</a>
+    <a href="#contact"  class="block text-white hover:text-red-400 text-lg"><i class="fas fa-envelope mr-2"></i>Contact</a>
   </div>
 </div>
-
-<!-- Overlay -->
 <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
 
+<!-- Hero Section -->
+<section id="home" class="hero-bg h-screen flex items-center justify-center relative">
+  <div class="hero-slide active" style="background-image:url('images/hero1.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero2.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero3.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('images/hero4.jpg')"></div>
 
-    <!-- Hero Section -->
-<section id="home" class="hero-bg h-screen flex items-center justify-center relative overflow-hidden">
-    <!-- Background Slides -->
-    <div class="hero-slide active" style="background-image: url('images/hero1.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hero2.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hero3.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('images/hero4.jpg');"></div>
+  <div class="hero-content absolute inset-0 flex items-center justify-center text-center px-4 pt-20">
+    <div class="max-w-6xl">
+      <!-- Slide 1 -->
+      <div class="slide-text active" id="slide-text-0">
+        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
+          SKY SECURITY & TRAINING <span class="block text-red-400 text-2xl md:text-4xl mt-2">ACADEMY</span>
+        </h1>
+        <p class="text-xl md:text-2xl mt-4 text-gray-200">Empowering Security Professionals – One Course at a Time</p>
+        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
+          Accredited PSIRA and firearm training programs from Grade E to A, tactical security, and instructor development.
+        </p>
+        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
+          ENROLL NOW
+        </a>
+      </div>
 
-    <!-- Hero Text Content -->
-    <div class="hero-content absolute inset-0 flex items-center justify-center text-center px-4 sm:px-8 pt-16 sm:pt-24 z-10">
-        <div class="max-w-6xl w-full">
-            <!-- Slide 1 -->
-            <div class="slide-text active" id="slide-text-0">
-                <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 md:mb-6 text-white leading-tight">
-                    SKY SECURITY & TRAINING
-                    <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 md:mt-4">ACADEMY</span>
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-2 md:mb-4 text-gray-200 font-semibold">
-                    Empowering Security Professionals – One Course at a Time
-                </p>
-                <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Accredited PSIRA and firearm training programs including Grade E to A, tactical security, and instructor development. Learn from real-world professionals and gain career-ready skills.
-                </p>
-                <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font transition-all duration-300 transform hover:scale-105">
-                    ENROLL NOW
-                </a>
-            </div>
+      <!-- Slide 2 -->
+      <div class="slide-text" id="slide-text-1">
+        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
+          FIREARMS TRAINING <span class="block text-red-400 text-2xl md:text-4xl mt-2">EXCELLENCE</span>
+        </h1>
+        <p class="text-xl md:text-2xl mt-4 text-gray-200">Master the Art of Responsible Firearm Handling</p>
+        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
+          Train with handguns, rifles, and shotguns under experienced instructors.
+        </p>
+        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
+          START TRAINING
+        </a>
+      </div>
 
-            <!-- Slide 2 -->
-            <div class="slide-text" id="slide-text-1">
-                <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 md:mb-6 text-white leading-tight">
-                    FIREARMS TRAINING
-                    <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 md:mt-4">EXCELLENCE</span>
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-2 md:mb-4 text-gray-200 font-semibold">
-                    Master the Art of Responsible Firearm Handling
-                </p>
-                <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Train with handguns, rifles, and shotguns under experienced instructors. Develop tactical precision, safety discipline, and operational confidence.
-                </p>
-                <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font transition-all duration-300 transform hover:scale-105">
-                    START TRAINING
-                </a>
-            </div>
+      <!-- Slide 3 -->
+      <div class="slide-text" id="slide-text-2">
+        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
+          TACTICAL OPERATIONS <span class="block text-red-400 text-2xl md:text-4xl mt-2">SPECIALIST COURSES</span>
+        </h1>
+        <p class="text-xl md:text-2xl mt-4 text-gray-200">Advanced Security Operations Training</p>
+        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
+          Cash-in-transit, armed response, control room operations.
+        </p>
+        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
+          ADVANCE YOUR CAREER
+        </a>
+      </div>
 
-            <!-- Slide 3 -->
-            <div class="slide-text" id="slide-text-2">
-                <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 md:mb-6 text-white leading-tight">
-                    TACTICAL OPERATIONS
-                    <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 md:mt-4">SPECIALIST COURSES</span>
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-2 md:mb-4 text-gray-200 font-semibold">
-                    Advanced Security Operations Training
-                </p>
-                <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Get real-world training in cash-in-transit, armed response, control room operations, and high-risk intervention. Prepare for leadership in tactical security.
-                </p>
-                <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font transition-all duration-300 transform hover:scale-105">
-                    ADVANCE YOUR CAREER
-                </a>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="slide-text" id="slide-text-3">
-                <h1 class="military-font font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 md:mb-6 text-white leading-tight">
-                    INSTRUCTOR DEVELOPMENT
-                    <span class="block text-red-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-2 md:mt-4">PROGRAM</span>
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-2 md:mb-4 text-gray-200 font-semibold">
-                    Train the Next Generation of Security Professionals
-                </p>
-                <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Become a certified instructor with our specialized training program. Learn to teach, mentor, and guide future security professionals across South Africa.
-                </p>
-                <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font transition-all duration-300 transform hover:scale-105">
-                    BECOME AN INSTRUCTOR
-                </a>
-            </div>
-        </div>
+      <!-- Slide 4 -->
+      <div class="slide-text" id="slide-text-3">
+        <h1 class="military-font font-black text-4xl md:text-6xl xl:text-7xl text-white">
+          INSTRUCTOR DEVELOPMENT <span class="block text-red-400 text-2xl md:text-4xl mt-2">PROGRAM</span>
+        </h1>
+        <p class="text-xl md:text-2xl mt-4 text-gray-200">Train the Next Generation of Security Professionals</p>
+        <p class="text-lg md:text-xl mt-2 max-w-3xl mx-auto text-gray-300">
+          Become a certified instructor across South Africa.
+        </p>
+        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-lg md:text-xl font-bold military-font mt-6">
+          BECOME AN INSTRUCTOR
+        </a>
+      </div>
     </div>
+  </div>
 
-    <!-- Slide Indicators -->
-    <div class="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
-        <button class="slide-indicator active w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="0"></button>
-        <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="1"></button>
-        <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="2"></button>
-        <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity" data-slide="3"></button>
-    </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
+    <button class="slide-indicator active w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
+    <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
+    <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50" data-slide="2"></button>
+    <button class="slide-indicator w-3 h-3 rounded-full bg-white opacity-50" data-slide="3"></button>
+  </div>
 </section>
 
+<!-- About -->
+<section id="about" class="py-20 bg-gray-900">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="military-font font-bold text-4xl mb-8 fade-in-up">ABOUT <span class="text-red-400">SKY SECURITY</span></h2>
+    <p class="text-lg mb-6 text-gray-300 leading-relaxed fade-in-up">
+      Sky Security & Training is a professional training institution based in Malamulele, Limpopo. We specialize in PSIRA grades, firearms, and advanced security courses for individuals and companies.
+    </p>
+    <p class="text-lg text-gray-300 leading-relaxed fade-in-up">
+      With years of experience and qualified instructors, we are dedicated to providing quality training that meets industry standards.
+    </p>
+  </div>
+</section>
 
-    <!-- About Us -->
-    <section id="about" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="military-font font-bold text-4xl mb-8 text-white fade-in-up">
-                    ABOUT <span class="text-red-400">SKY SECURITY</span>
-                </h2>
-                <p class="text-lg mb-6 text-gray-300 leading-relaxed fade-in-up">
-                    Sky Security & Training is a professional training institution based in Malamulele, Limpopo. We specialize in PSIRA grades, firearms, and advanced security courses for individuals and companies.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed fade-in-up">
-                    With years of experience and qualified instructors, we are dedicated to providing quality training that meets industry standards. Our commitment to excellence ensures that every graduate is prepared for real-world security challenges.
-                </p>
-            </div>
+<!-- Courses -->
+<section id="courses" class="py-20 bg-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="military-font font-bold text-4xl text-center mb-16 fade-in-up">COURSES & <span class="text-red-400">SERVICES</span></h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Grades -->
+      <div class="bg-gray-900 p-8 rounded-lg fade-in-left">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+          </div>
+          <h3 class="military-font font-bold text-2xl mb-4">GRADES</h3>
         </div>
-    </section>
-
-    <!-- Courses & Services -->
-    <section id="courses" class="py-20 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="military-font font-bold text-4xl text-center mb-16 text-white fade-in-up">
-                COURSES & <span class="text-red-400">SERVICES</span>
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Grades -->
-                <div class="course-card bg-gray-900 p-8 rounded-lg fade-in-left stagger-animation">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                        </div>
-                        <h3 class="military-font font-bold text-2xl text-white mb-4">GRADES</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Grade E, D, C</span>
-                            <span class="text-red-400 font-bold">R1500</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Grade B</span>
-                            <span class="text-red-400 font-bold">R1200</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Grade A</span>
-                            <span class="text-red-400 font-bold">R1400</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">CCTV</span>
-                            <span class="text-red-400 font-bold">R1500</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-300">PSIRA + Registration</span>
-                            <span class="text-red-400 font-bold">R600</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Firearms Training -->
-                <div class="course-card bg-gray-900 p-8 rounded-lg scale-in stagger-animation">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-crosshairs text-white text-2xl"></i>
-                        </div>
-                        <h3 class="military-font font-bold text-2xl text-white mb-4">FIREARMS TRAINING</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Handgun</span>
-                            <span class="text-red-400 font-bold">R2200</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Rifle</span>
-                            <span class="text-red-400 font-bold">R2300</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-300">Shotgun</span>
-                            <span class="text-red-400 font-bold">R2300</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Special Courses -->
-                <div class="course-card bg-gray-900 p-8 rounded-lg fade-in-right stagger-animation">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-certificate text-white text-2xl"></i>
-                        </div>
-                        <h3 class="military-font font-bold text-2xl text-white mb-4">SPECIAL COURSES</h3>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Regulation 21</span>
-                            <span class="text-red-400 font-bold">R1600</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Cash in Transit</span>
-                            <span class="text-red-400 font-bold">R1600</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Armed Reaction</span>
-                            <span class="text-red-400 font-bold">R1600</span>
-                        </div>
-                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300">Control Room</span>
-                            <span class="text-red-400 font-bold">R1800</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-300">Instructor Course</span>
-                            <span class="text-red-400 font-bold">R3500</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-<section id="gallery" class="py-20 bg-gray-900">
-  <div class="container mx-auto px-4">
-    <h2 class="military-font font-bold text-4xl text-center mb-16 text-white fade-in-up">
-      OUR TRAINING IN <span class="text-red-400">ACTION</span>
-    </h2>
-
-    <div class="grid md:grid-cols-4 gap-6">
-      <!-- Gallery Item 1 -->
-      <div class="gallery-item bg-gray-800 rounded-lg overflow-hidden scale-in stagger-animation">
-        <img src="images/gallery1.jpg" alt="Classroom Training" class="w-full h-64 object-contain bg-black">
-        <div class="p-4">
-          <h4 class="font-bold text-white">Classroom Training</h4>
-          <p class="text-gray-400 text-sm">Professional instruction</p>
+        <div class="space-y-3 text-gray-300">
+          <div class="flex justify-between"><span>Grade E, D, C</span><span class="text-red-400 font-bold">R1500</span></div>
+          <div class="flex justify-between"><span>Grade B</span><span class="text-red-400 font-bold">R1200</span></div>
+          <div class="flex justify-between"><span>Grade A</span><span class="text-red-400 font-bold">R1400</span></div>
+          <div class="flex justify-between"><span>CCTV</span><span class="text-red-400 font-bold">R1500</span></div>
+          <div class="flex justify-between"><span>PSIRA + Registration</span><span class="text-red-400 font-bold">R600</span></div>
         </div>
       </div>
 
-      <!-- Gallery Item 2 -->
-      <div class="gallery-item bg-gray-800 rounded-lg overflow-hidden scale-in stagger-animation">
-        <img src="images/gallery2.jpg" alt="Tactical Drills" class="w-full h-64 object-contain bg-black">
-        <div class="p-4">
-          <h4 class="font-bold text-white">Tactical Drills</h4>
-          <p class="text-gray-400 text-sm">Hands-on practice</p>
+      <!-- Firearms -->
+      <div class="bg-gray-900 p-8 rounded-lg scale-in">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-crosshairs text-white text-2xl"></i>
+          </div>
+          <h3 class="military-font font-bold text-2xl mb-4">FIREARMS TRAINING</h3>
+        </div>
+        <div class="space-y-3 text-gray-300">
+          <div class="flex justify-between"><span>Handgun</span><span class="text-red-400 font-bold">R2200</span></div>
+          <div class="flex justify-between"><span>Rifle</span><span class="text-red-400 font-bold">R2300</span></div>
+          <div class="flex justify-between"><span>Shotgun</span><span class="text-red-400 font-bold">R2300</span></div>
         </div>
       </div>
 
-      <!-- Gallery Item 3 -->
-      <div class="gallery-item bg-gray-800 rounded-lg overflow-hidden scale-in stagger-animation">
-        <img src="images/gallery3.jpg" alt="Firearms Practice" class="w-full h-64 object-contain bg-black">
-        <div class="p-4">
-          <h4 class="font-bold text-white">Firearms Practice</h4>
-          <p class="text-gray-400 text-sm">Range training</p>
+      <!-- Special -->
+      <div class="bg-gray-900 p-8 rounded-lg fade-in-right">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-certificate text-white text-2xl"></i>
+          </div>
+          <h3 class="military-font font-bold text-2xl mb-4">SPECIAL COURSES</h3>
         </div>
-      </div>
-
-      <!-- Gallery Item 4 -->
-      <div class="gallery-item bg-gray-800 rounded-lg overflow-hidden scale-in stagger-animation">
-        <img src="images/gallery4.jpg" alt="Security Operations" class="w-full h-64 object-contain bg-black">
-        <div class="p-4">
-          <h4 class="font-bold text-white">Security Operations</h4>
-          <p class="text-gray-400 text-sm">Real-world scenarios</p>
+        <div class="space-y-3 text-gray-300">
+          <div class="flex justify-between"><span>Regulation 21</span><span class="text-red-400 font-bold">R1600</span></div>
+          <div class="flex justify-between"><span>Cash in Transit</span><span class="text-red-400 font-bold">R1600</span></div>
+          <div class="flex justify-between"><span>Armed Reaction</span><span class="text-red-400 font-bold">R1600</span></div>
+          <div class="flex justify-between"><span>Control Room</span><span class="text-red-400 font-bold">R1800</span></div>
+          <div class="flex justify-between"><span>Instructor Course</span><span class="text-red-400 font-bold">R3500</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Gallery -->
+<section id="gallery" class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="military-font font-bold text-4xl text-center mb-16 fade-in-up">OUR TRAINING IN <span class="text-red-400">ACTION</span></h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="bg-gray-800 rounded-lg overflow-hidden scale-in">
+        <img src="images/gallery1.jpg" alt="Classroom Training" class="w-full h-64 object-contain bg-black">
+        <div class="p-4"><h4 class="font-bold">Classroom Training</h4><p class="text-gray-400 text-sm">Professional instruction</p></div>
+      </div>
+      <div class="bg-gray-800 rounded-lg overflow-hidden scale-in">
+        <img src="images/gallery2.jpg" alt="Tactical Drills" class="w-full h-64 object-contain bg-black">
+        <div class="p-4"><h4 class="font-bold">Tactical Drills</h4><p class="text-gray-400 text-sm">Hands-on practice</p></div>
+      </div>
+      <div class="bg-gray-800 rounded-lg overflow-hidden scale-in">
+        <img src="images/gallery3.jpg" alt="Firearms Practice" class="w-full h-64 object-contain bg-black">
+        <div class="p-4"><h4 class="font-bold">Firearms Practice</h4><p class="text-gray-400 text-sm">Range training</p></div>
+      </div>
+      <div class="bg-gray-800 rounded-lg overflow-hidden scale-in">
+        <img src="images/gallery4.jpg" alt="Security Operations" class="w-full h-64 object-contain bg-black">
+        <div class="p-4"><h4 class="font-bold">Security Operations</h4><p class="text-gray-400 text-sm">Real-world scenarios</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Why Choose Us -->
-    <section class="py-20 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="military-font font-bold text-4xl text-center mb-16 text-white fade-in-up">
-                WHY CHOOSE <span class="text-red-400">SKY SECURITY</span>
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <div class="text-center fade-in-up stagger-animation">
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-certificate text-white text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-white mb-2">PSIRA-Compliant</h4>
-                    <p class="text-gray-400 text-sm">Certified training programs</p>
-                </div>
-                
-                <div class="text-center fade-in-up stagger-animation">
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-user-tie text-white text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-white mb-2">Qualified Instructors</h4>
-                    <p class="text-gray-400 text-sm">Experienced professionals</p>
-                </div>
-                
-                <div class="text-center fade-in-up stagger-animation">
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-white mb-2">Affordable Prices</h4>
-                    <p class="text-gray-400 text-sm">Competitive rates</p>
-                </div>
-                
-                <div class="text-center fade-in-up stagger-animation">
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-white mb-2">Real-World Training</h4>
-                    <p class="text-gray-400 text-sm">Practical simulations</p>
-                </div>
-                
-                <div class="text-center fade-in-up stagger-animation">
-                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-white mb-2">Prime Location</h4>
-                    <p class="text-gray-400 text-sm">Next to Malamulele Hospital</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Why Choose Us -->
+<section class="py-20 bg-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="military-font font-bold text-4xl text-center mb-16 fade-in-up">WHY CHOOSE <span class="text-red-400">SKY SECURITY</span></h2>
+    <div class="grid md:grid-cols-5 gap-8 text-center">
+      <div class="fade-in-up"><div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-certificate text-white text-2xl"></i></div><h4 class="font-bold text-white mb-2">PSIRA-Compliant</h4><p class="text-gray-400 text-sm">Certified training</p></div>
+      <div class="fade-in-up"><div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-user-tie text-white text-2xl"></i></div><h4 class="font-bold text-white mb-2">Qualified Instructors</h4><p class="text-gray-400 text-sm">Real experience</p></div>
+      <div class="fade-in-up"><div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-dollar-sign text-white text-2xl"></i></div><h4 class="font-bold text-white mb-2">Affordable Prices</h4><p class="text-gray-400 text-sm">Competitive rates</p></div>
+      <div class="fade-in-up"><div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-cogs text-white text-2xl"></i></div><h4 class="font-bold text-white mb-2">Real-World Training</h4><p class="text-gray-400 text-sm">Practical simulations</p></div>
+      <div class="fade-in-up"><div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-map-marker-alt text-white text-2xl"></i></div><h4 class="font-bold text-white mb-2">Prime Location</h4><p class="text-gray-400 text-sm">Next to Hospital</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Recruitment Section -->
+<!-- Recruitment -->
 <section id="recruitment" class="py-20 bg-black border-t border-red-600">
-  <div class="container mx-auto px-4 max-w-4xl text-center">
-    <h2 class="military-font text-white text-4xl sm:text-5xl font-bold mb-8 tracking-wide">
-      We’re Hiring Marketing Agents
-    </h2>
-
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="military-font text-white text-4xl sm:text-5xl font-bold mb-8">We’re Hiring Marketing Agents</h2>
     <div class="bg-gray-900 rounded-xl p-8 md:p-12 shadow-lg">
-      <p class="text-gray-300 text-xl md:text-2xl font-semibold mb-6">
-        Join the mission. Build your future.
-      </p>
-
+      <p class="text-gray-300 text-xl md:text-2xl font-semibold mb-6">Join the mission. Build your future.</p>
       <div class="grid sm:grid-cols-2 gap-6 text-left text-white text-base sm:text-lg mb-8">
         <div>
           <p><span class="font-bold text-red-400">Role:</span> 20 Marketing Agents</p>
@@ -569,338 +323,173 @@
           <p><span class="font-bold text-red-400">Experience:</span> Not required – we’ll train you</p>
         </div>
       </div>
-
-      <p class="text-lg text-gray-200 italic mb-6">
-        “Grow with us. Earn with us.”
-      </p>
-
+      <p class="text-lg text-gray-200 italic mb-6">“Grow with us. Earn with us.”</p>
       <div class="mb-6">
         <h4 class="text-white font-bold text-xl mb-2">Interested?</h4>
-        <p class="text-gray-300">Call us: <span class="text-white font-medium">079 617 7938</span></p>
+        <p class="text-gray-300">Call: <span class="text-white font-medium">079 617 7938</span></p>
         <p class="text-gray-300">Email: <span class="text-white font-medium">Epolitemessenger3@gmail.com</span></p>
       </div>
-
       <p class="text-red-400 font-semibold text-lg mt-4">Sky Security Training – Empowering Security Careers</p>
     </div>
   </div>
 </section>
 
-
-    <!-- Contact Us -->
-    <section id="contact" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="military-font font-bold text-4xl text-center mb-16 text-white fade-in-up">
-                CONTACT <span class="text-red-400">US</span>
-            </h2>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div class="fade-in-left">
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-2">Address</h4>
-                                <p class="text-gray-300">Office No. 6, Block A, Hlekani Complex<br>
-                                Opp Malamulele Hospital, Malamulele, 0982</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fab fa-whatsapp text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-2">WhatsApp</h4>
-                                <p class="text-gray-300">079 617 7938 / 065 076 3708</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-2">Email</h4>
-                                <p class="text-gray-300">securitysky@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-<div class="mt-8 rounded-lg overflow-hidden shadow-lg">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.099156455201!2d30.693910774845627!3d-22.997577541121206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5b10bf4e9fd65%3A0x63307a4feade3c75!2sSKY%20SECURITY%20AND%20TRAINING!5e1!3m2!1sen!2sza!4v1754313764323!5m2!1sen!2sza" 
-    width="100%" 
-    height="300" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
-                </div>
-                
-                <!-- Contact Form -->
-                <div class="contact-form fade-in-right">
-                    <form class="space-y-6" onsubmit="handleFormSubmit(event)">
-                        <div>
-                            <label class="block text-white font-semibold mb-2">Name</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-white font-semibold mb-2">Email</label>
-                            <input type="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-white font-semibold mb-2">Course Interested In</label>
-                            <select required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
-                                <option value="">Select a course</option>
-                                <option value="Grade E/D/C">Grade E, D, C</option>
-                                <option value="Grade B">Grade B</option>
-                                <option value="Grade A">Grade A</option>
-                                <option value="CCTV">CCTV</option>
-                                <option value="Handgun">Handgun Training</option>
-                                <option value="Rifle">Rifle Training</option>
-                                <option value="Shotgun">Shotgun Training</option>
-                                <option value="Regulation 21">Regulation 21</option>
-                                <option value="Cash in Transit">Cash in Transit</option>
-                                <option value="Armed Reaction">Armed Reaction</option>
-                                <option value="Control Room">Control Room</option>
-                                <option value="Instructor Course">Instructor Course</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-white font-semibold mb-2">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold military-font transition-colors duration-300">
-                            SEND MESSAGE
-                        </button>
-                    </form>
-                </div>
+<!-- Contact -->
+<section id="contact" class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="military-font font-bold text-4xl text-center mb-16 fade-in-up">CONTACT <span class="text-red-400">US</span></h2>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="fade-in-left">
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-white"></i></div>
+            <div>
+              <h4 class="font-bold text-white mb-2">Address</h4>
+              <p class="text-gray-300">Office No. 6, Block A, Hlekani Complex<br>Opp Malamulele Hospital, Malamulele, 0982</p>
             </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><i class="fab fa-whatsapp text-white"></i></div>
+            <div>
+              <h4 class="font-bold text-white mb-2">WhatsApp</h4>
+              <p class="text-gray-300">079 617 7938 / 065 076 3708</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-white"></i></div>
+            <div>
+              <h4 class="font-bold text-white mb-2">Email</h4>
+              <p class="text-gray-300">securitysky@gmail.com</p>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black border-t border-red-600 py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center">
-  <img src="images/logo.png" alt="Sky Security Logo" class="w-full h-full object-contain">
-</div>
-                        <div>
-                            <h3 class="military-font font-bold text-xl text-white">SKY SECURITY</h3>
-                            <p class="text-red-400 text-sm">Training Academy</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-400">Professional security training in Malamulele, Limpopo.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold text-white mb-4">Contact Info</h4>
-                    <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-phone mr-2 text-red-400"></i> 079 617 7938</p>
-                        <p><i class="fas fa-envelope mr-2 text-red-400"></i> securitysky@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt mr-2 text-red-400"></i> Malamulele, 0982</p>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold text-white mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/p/SKY-Security-Training-Academy-61567701456709/" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                            <i class="fab fa-facebook-f text-white"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/discover/sky-security-training-academy" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                            <i class="fab fa-tiktok text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                            <i class="fab fa-instagram text-white"></i>
-                        </a>
-                        <a href="https://wa.me/27796177938" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                            <i class="fab fa-whatsapp text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">© 2025 Sky Training Academy. All rights reserved.</p>
-            </div>
+        <div class="mt-8 rounded-lg overflow-hidden shadow-lg">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.099156455201!2d30.693910774845627!3d-22.997577541121206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5b10bf4e9fd65%3A0x63307a4feade3c75!2sSKY%20SECURITY%20AND%20TRAINING!5e1!3m2!1sen!2sza!4v1754313764323!5m2!1sen!2sza"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        // Hero Slider Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        const slideTexts = document.querySelectorAll('.slide-text');
-        const indicators = document.querySelectorAll('.slide-indicator');
-        const totalSlides = slides.length;
+      <div class="fade-in-right">
+        <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+          <div>
+            <label class="block text-white font-semibold mb-2">Name</label>
+            <input type="text" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
+          </div>
+          <div>
+            <label class="block text-white font-semibold mb-2">Email</label>
+            <input type="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
+          </div>
+          <div>
+            <label class="block text-white font-semibold mb-2">Course Interested In</label>
+            <select required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white">
+              <option value="">Select a course</option>
+              <option>Grade E, D, C</option><option>Grade B</option><option>Grade A</option><option>CCTV</option>
+              <option>Handgun</option><option>Rifle</option><option>Shotgun</option>
+              <option>Regulation 21</option><option>Cash in Transit</option><option>Armed Reaction</option>
+              <option>Control Room</option><option>Instructor Course</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-white font-semibold mb-2">Message</label>
+            <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold military-font">
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function showSlide(index) {
-            // Hide all slides and texts
-            slides.forEach(slide => slide.classList.remove('active'));
-            slideTexts.forEach(text => text.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            // Show current slide and text
-            slides[index].classList.add('active');
-            slideTexts[index].classList.add('active');
-            indicators[index].classList.add('active');
-        }
+<!-- Footer -->
+<footer class="bg-black border-t border-red-600 py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="images/logo.png" alt="Sky Security Logo" class="w-12 h-12 object-contain">
+          <div>
+            <h3 class="military-font font-bold text-xl text-white">SKY SECURITY</h3>
+            <p class="text-red-400 text-sm">Training Academy</p>
+          </div>
+        </div>
+        <p class="text-gray-400">Professional security training in Malamulele, Limpopo.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-4">Contact Info</h4>
+        <div class="space-y-2 text-gray-400">
+          <p><i class="fas fa-phone mr-2 text-red-400"></i>079 617 7938</p>
+          <p><i class="fas fa-envelope mr-2 text-red-400"></i>securitysky@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt mr-2 text-red-400"></i>Malamulele, 0982</p>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/p/SKY-Security-Training-Academy-61567701456709/" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700"><i class="fab fa-facebook-f text-white"></i></a>
+          <a href="https://www.tiktok.com/discover/sky-security-training-academy" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700"><i class="fab fa-tiktok text-white"></i></a>
+          <a href="https://wa.me/27796177938" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700"><i class="fab fa-whatsapp text-white"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+      <p class="text-gray-400">© 2025 Sky Training Academy. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Manual slide control
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
-            });
-        });
-
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
-            animatedElements.forEach(el => observer.observe(el));
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const name = formData.get('name') || event.target.querySelector('input[type="text"]').value;
-            const email = formData.get('email') || event.target.querySelector('input[type="email"]').value;
-            const course = formData.get('course') || event.target.querySelector('select').value;
-            const message = formData.get('message') || event.target.querySelector('textarea').value;
-            
-            // Create WhatsApp message
-            const whatsappMessage = `Hello Sky Security & Training!%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ACourse Interested In: ${encodeURIComponent(course)}%0AMessage: ${encodeURIComponent(message)}`;
-            
-            // Open WhatsApp
-            window.open(`https://wa.me/27796177938?text=${whatsappMessage}`, '_blank');
-            
-            // Reset form
-            event.target.reset();
-            
-            // Show success message
-            alert('Thank you for your inquiry! You will be redirected to WhatsApp to complete your message.');
-        }
-
-        // Mobile menu toggle
-        document.querySelector('.md\\:hidden button').addEventListener('click', function() {
-            const mobileMenu = document.querySelector('.md\\:flex');
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-black', 'p-4');
-            } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-black', 'p-4');
-            }
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-black');
-                nav.classList.remove('bg-black/90');
-            } else {
-                nav.classList.remove('bg-black');
-                nav.classList.add('bg-black/90');
-            }
-        });
-    </script>
-    <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileSidebar = document.getElementById('mobileSidebar');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
-  const closeSidebar = document.getElementById('closeSidebar');
-
-  // Open sidebar
-  menuToggle.addEventListener('click', () => {
-    mobileSidebar.classList.remove('-translate-x-full');
-    sidebarOverlay.classList.remove('hidden');
-  });
-
-  // Close sidebar
-  closeSidebar.addEventListener('click', () => {
-    mobileSidebar.classList.add('-translate-x-full');
-    sidebarOverlay.classList.add('hidden');
-  });
-
-  // Close when clicking outside
-  sidebarOverlay.addEventListener('click', () => {
-    mobileSidebar.classList.add('-translate-x-full');
-    sidebarOverlay.classList.add('hidden');
-  });
-</script>
-
+<!-- Scripts -->
 <script>
-function handleFormSubmit(event) {
-  event.preventDefault();
+  /* Hero slider */
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const slideTexts = document.querySelectorAll('.slide-text');
+  const indicators = document.querySelectorAll('.slide-indicator');
+  function showSlide(index){
+    slides.forEach(s=>s.classList.remove('active'));
+    slideTexts.forEach(t=>t.classList.remove('active'));
+    indicators.forEach(i=>i.classList.remove('active'));
+    slides[index].classList.add('active');
+    slideTexts[index].classList.add('active');
+    indicators[index].classList.add('active');
+  }
+  function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
+  setInterval(nextSlide,5000);
+  indicators.forEach((btn,i)=>btn.addEventListener('click',()=>{currentSlide=i;showSlide(i)}));
 
-  const form = event.target;
-  const name = form.querySelector('input[type="text"]').value.trim();
-  const email = form.querySelector('input[type="email"]').value.trim();
-  const course = form.querySelector('select').value;
-  const message = form.querySelector('textarea').value.trim();
+  /* Scroll animations */
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>e.isIntersecting && e.target.classList.add('animate')),{threshold:0.1});
+  document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el=>obs.observe(el));
 
-  const whatsappMessage = `Hello, my name is ${name}%0AEmail: ${email}%0AI am interested in: ${course}%0AMessage: ${message}`;
-  const phoneNumber = "27796177938"; // WhatsApp requires country code without +
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  }));
 
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
-  window.open(whatsappURL, '_blank');
-}
+  /* Mobile menu */
+  const menuToggle=document.getElementById('menuToggle');
+  const mobileSidebar=document.getElementById('mobileSidebar');
+  const overlay=document.getElementById('sidebarOverlay');
+  const closeBtn=document.getElementById('closeSidebar');
+  [menuToggle,closeBtn,overlay].forEach(el=>el.addEventListener('click',()=>{
+    mobileSidebar.classList.toggle('-translate-x-full');
+    overlay.classList.toggle('hidden');
+  }));
+
+  /* WhatsApp form */
+  function handleFormSubmit(e){
+    e.preventDefault();
+    const f=e.target;
+    const name=f.querySelector('input[type="text"]').value.trim();
+    const email=f.querySelector('input[type="email"]').value.trim();
+    const course=f.querySelector('select').value;
+    const msg=f.querySelector('textarea').value.trim();
+    const text=`Hello, my name is ${name}%0AEmail: ${email}%0AI am interested in: ${course}%0AMessage: ${msg}`;
+    window.open(`https://wa.me/27796177938?text=${text}`,'_blank');
+    f.reset();
+  }
 </script>
-
-
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'969e0360e47b73b8',t:'MTc1NDMxMDA3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
